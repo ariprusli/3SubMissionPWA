@@ -20,7 +20,10 @@ else
       { url: '/manifest.json', revision: '1' },
       { url: '/icon.png', revision: '1' },
       { url: 'https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js', revision: '1' },
-  ]);
+  ],{
+      ignoreUrlParametersMatching: [/.*/]
+  });
+  
 //menyimpan semua berkas halaman yang ada didalam folder pages
   workbox.routing.registerRoute(
     new RegExp('/pages/'),
