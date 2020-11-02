@@ -1,7 +1,5 @@
 var base_url = "https://api.football-data.org/v2/";
-  base_url = base_url.replace(/^http:\/\//i, 'https://');
-
-
+  
 function status(response) {
   if (response.status !== 200) {
     console.log("Error : " + response.status);
@@ -34,7 +32,7 @@ function getArticles() {
                     <div class="card">
                         <a href="./article.html?id=${article.id}">
                           <div class="card-image waves-effect waves-block waves-light">
-                            <img src="${article.crestUrl}" />
+                            <img src="${article.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                           </div>
                         </a>
                         <div class="card-content">
@@ -68,7 +66,7 @@ function getArticles() {
               <div class="card">
                 <a href="./article.html?id=${article.id}">
                   <div class="card-image waves-effect waves-block waves-light">
-                    <img src="${article.crestUrl}" />
+                    <img src="${article.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                   </div>
                 </a>
                 <div class="card-content">
@@ -98,7 +96,7 @@ function getArticleById() {
               var articleHTML = `
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="${data.crestUrl}" />
+                <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" />
               </div>
               <div class="card-content">
                 <span class="card-title truncate" style="text-align: center;">${data.name}</span>
@@ -130,7 +128,7 @@ function getArticleById() {
           var articleHTML = `
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img src="${data.crestUrl}" />
+                  <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                 </div>
                 <div class="card-content">
                   <span class="card-title truncate" style="text-align: center;">${data.name}</span>
